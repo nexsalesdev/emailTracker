@@ -11,9 +11,15 @@ function getQueryParams(qs) {
     return params;
 }
 
+function getDateTime() {
+    var date = new Date();
+    return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()).toISOString();
+}
+
 try{
     if (window.location.search != ''){
-        var data = getQueryParams(window.location.search)
+        var data = getQueryParams(window.location.search);
+        data["created_at"] = getDateTime();
         const xhr = new XMLHttpRequest();
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
