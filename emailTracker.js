@@ -13,7 +13,7 @@ function getQueryParams(qs) {
 
 function getDateTime() {
     var date = new Date();
-    return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()).toISOString();
+    return (date.getUTCFullYear() +"-"+ date.getUTCMonth()+1 +"-"+ date.getUTCDate() +" "+ date.getUTCHours() +":"+ date.getUTCMinutes() +":"+ date.getUTCSeconds());
 }
 
 try{
