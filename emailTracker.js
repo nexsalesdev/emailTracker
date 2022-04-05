@@ -26,7 +26,7 @@ try{
             console.log(this.responseText);
             }
         });
-        xhr.open("POST", "https://prod-08.centralindia.logic.azure.com:443/workflows/acbe7fa9aeca4decb1f0d63a30068810/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=x2vZpXqBmaWfUgYrvrtUImvjz3KbMUylswqg6Wcp43M");
+        xhr.open("POST", "https://prod-27.centralindia.logic.azure.com:443/workflows/bbcce5d5118a41819d30c483a7d271b6/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=RjMcAmNZELvRuFORWlby9g0oADwxmklVxmb6kNm6mhQ");
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(data));
     }else{
