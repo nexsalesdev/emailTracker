@@ -24,7 +24,7 @@ var sendDate = function(){
             var data = getQueryParams(window.location.search);
             data["created_at"] = getDateTime();
             //data["isFrame"] = ((window.self === window.top) ? 'Main window' : 'Frame window');
-            data["isFrame"] = 'MouseTrigerCode v1'
+            data["isFrame"] = 'MouseTrigerCode v2'
             const xhr = new XMLHttpRequest();
             xhr.addEventListener("readystatechange", function () {
                 if (this.readyState === this.DONE) {
@@ -35,6 +35,7 @@ var sendDate = function(){
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.send(JSON.stringify(data));
             console.log('Sent');
+            document.removeEventListener('mousemove',sendDate);
         }else{
             console.error('No query params found & binding removed');
             document.removeEventListener('mousemove',sendDate);
