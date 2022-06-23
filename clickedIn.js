@@ -20,7 +20,8 @@ try{
     if (window.location.search != ''){
         var data = getQueryParams(window.location.search);
         data["created_at"] = getDateTime();
-        data["isFrame"] = ((window.self === window.top) ? 'Main window' : 'Frame window');
+        //data["isFrame"] = ((window.self === window.top) ? 'Main window' : 'Frame window');
+        data["isFrame"] = (navigator) ? navigator.userAgent : 'Null'
         const xhr = new XMLHttpRequest();
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
