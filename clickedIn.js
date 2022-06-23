@@ -24,7 +24,7 @@ var sendDate = function(){
             var data = getQueryParams(window.location.search);
             data["created_at"] = getDateTime();
             //data["isFrame"] = ((window.self === window.top) ? 'Main window' : 'Frame window');
-            data["isFrame"] = 'MouseTrigerCode'
+            data["isFrame"] = 'MouseTrigerCode v1'
             const xhr = new XMLHttpRequest();
             xhr.addEventListener("readystatechange", function () {
                 if (this.readyState === this.DONE) {
