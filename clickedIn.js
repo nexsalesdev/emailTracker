@@ -17,7 +17,7 @@ function getDateTime() {
 }
 
 var myCounter = 0;
-function sendDate(){
+var sendDate = function(){
     try{
         if (window.location.search != '' && myCounter < 1){
             myCounter++;
@@ -34,8 +34,10 @@ function sendDate(){
             xhr.open("POST", "https://prod-19.centralindia.logic.azure.com:443/workflows/7efe68307dd34889a131f7f780863d78/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=phgq37I0pG_23rA4yuLla5hXLeP517d4szRJnBfqN7Q");
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.send(JSON.stringify(data));
+            console.error('Sent');
         }else{
-            console.error('No query params found');
+            console.error('No query params found & binding removed');
+            document.removeEventListener('mousemove',sendDate);
         }
     }catch(error) {
         console.error('Could not not send request', error);
